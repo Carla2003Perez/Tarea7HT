@@ -1,7 +1,7 @@
 function validacion(age, username, password) {
   const errors = [];
 
-  // Validar edad
+  
   if (typeof age !== "number") {
     errors.push("La edad debe ser un número.");
   } else {
@@ -9,7 +9,7 @@ function validacion(age, username, password) {
     if (age > 65) errors.push("Edad máxima 65 años.");
   }
 
-  // Validar username
+  
   if (typeof username !== "string") {
     errors.push("El nombre de usuario debe ser texto.");
   } else {
@@ -17,7 +17,6 @@ function validacion(age, username, password) {
     if (username.length > 15) errors.push("Nombre de usuario demasiado largo (máximo 15).");
   }
 
-  // Validar password
   if (typeof password !== "string") {
     errors.push("La contraseña debe ser texto.");
   } else {

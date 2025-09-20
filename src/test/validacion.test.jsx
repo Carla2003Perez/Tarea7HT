@@ -1,7 +1,5 @@
-// userValidation.test.js
 const { validacion } = require("../domain/validacion");
 
-// Edad
 test("Edad menor a 18 -> inválido", () => {
   const result = validacion(17, "abc", "passw0rd");
   expect(result.valid).toBe(false);
@@ -19,7 +17,7 @@ test("Edad mayor a 65 -> inválido", () => {
   expect(result.errors).toContain("Edad máxima 65 años.");
 });
 
-// Username
+
 test("Username demasiado corto -> inválido", () => {
   const result = validacion(30, "ab", "passw0rd");
   expect(result.valid).toBe(false);
@@ -38,7 +36,7 @@ test("Username demasiado largo -> inválido", () => {
   expect(result.errors).toContain("Nombre de usuario demasiado largo (máximo 15).");
 });
 
-// Password
+
 test("Password demasiado corta -> inválido", () => {
   const result = validacion(30, "abc", "p4ss7");
   expect(result.valid).toBe(false);
@@ -64,7 +62,7 @@ test("Todos límites superiores válidos -> válido", () => {
 });
 
 test("Password demasiado larga -> inválido", () => {
-  const password = "1" + "a".repeat(20); // 21 chars
+  const password = "1" + "a".repeat(20); 
   const result = validacion(30, "abc", password);
   expect(result.valid).toBe(false);
   expect(result.errors).toContain("Contraseña demasiado larga (máximo 20).");
